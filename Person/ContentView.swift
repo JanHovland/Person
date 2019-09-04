@@ -9,10 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var textString = "Click Me"
+    
     var body: some View {
-        List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-            Text("Hello World")
-        }
+        VStack(alignment: .center, spacing: 50) {
+            
+            Text("Press the button below")
+            
+            // Her er det en knapp i Vstack som kun kan trykkes en gang
+            
+            Button(action: {
+                self.textString = "Wow Amazing"
+            }) {
+               Text(textString)
+            }
+         .disabled(textString == "Wow Amazing")
+       }
     }
 }
 
