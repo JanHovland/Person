@@ -21,13 +21,13 @@ struct ContentView: View {
                 .frame(width: CGFloat(100.0), height: CGFloat(100.0))
                 .clipped()
            
-            
             TextField("Password", text: $password)
-                .textContentType(.newPassword)
+                .keyboardType(.emailAddress)
+                               
             
             TextField("Username", text: $username)
-                .textContentType(.givenName)
-           
+                .keyboardType(.default)
+                    
             
             Button(action: {
                 print("\(self.username) and \(self.password)" as Any)
