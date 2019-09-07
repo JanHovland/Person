@@ -21,9 +21,14 @@ struct ContentView: View {
                 .frame(width: CGFloat(100.0), height: CGFloat(100.0))
                 .clipped()
            
-            TextField("Password", text: $password)
-                .keyboardType(.emailAddress)
+            HStack {
+            
+                Text("Password")
                                
+                TextField("Password", text: $password)
+                    .keyboardType(.emailAddress)
+                               
+            }
             
             TextField("Username", text: $username)
                 .keyboardType(.default)
