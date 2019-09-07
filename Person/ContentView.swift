@@ -10,21 +10,32 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var textString = "Click Me"
-    
+    @State private var username = ""
+    @State private var password = ""
+
     var body: some View {
-        VStack(alignment: .center, spacing: 50) {
+        VStack {
             
-            Text("Press the button below")
+            Image("Image")
+                .resizable()
+                .frame(width: CGFloat(100.0), height: CGFloat(100.0))
+                .clipped()
+           
             
-            // Her er det en knapp i Vstack som kun kan trykkes en gang
+            TextField("Password", text: $password)
+                .textContentType(.newPassword)
+            
+            TextField("Username", text: $username)
+                .textContentType(.givenName)
+           
             
             Button(action: {
-                self.textString = "Wow Amazing"
+                print("\(self.username) and \(self.password)" as Any)
             }) {
-               Text(textString)
+                Text("Login")
             }
-         .disabled(textString == "Wow Amazing")
+            
+           
        }
     }
 }
