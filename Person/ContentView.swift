@@ -27,7 +27,7 @@ struct ContentView: View {
                     . padding(.trailing, 37)
                     
                 TextField("Legg inn epost ", text: $email)
-                    .keyboardType(.default)
+                    .keyboardType(.emailAddress)
             }
             
             HStack {
@@ -36,12 +36,17 @@ struct ContentView: View {
                  . padding(.trailing, 20)
                  
                  SecureField("Legg inn passord", text: $passord)
-                     .keyboardType(.emailAddress)
+                     .keyboardType(.default)
                                 
-             }
+            }
              
+                      
             Button(action: {
-                print("\(self.email) and \(self.passord)" as Any)
+                if self.email == "" || self.passord == "" {
+                }
+                else {
+                    print("\(self.email) and \(self.passord)" as Any)
+                }
             }) {
                 Text("Login")
             }
