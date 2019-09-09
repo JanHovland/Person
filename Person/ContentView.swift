@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var username = ""
-    @State private var password = ""
+    @State private var email = ""
+    @State private var passord = ""
 
     var body: some View {
         VStack {
@@ -22,20 +22,26 @@ struct ContentView: View {
                 .clipped()
            
             HStack {
-            
-                Text("Password")
-                               
-                TextField("Password", text: $password)
-                    .keyboardType(.emailAddress)
-                               
+                Text("Epost")
+                    . padding(.leading, 10)
+                    . padding(.trailing, 37)
+                    
+                TextField("Legg inn epost ", text: $email)
+                    .keyboardType(.default)
             }
             
-            TextField("Username", text: $username)
-                .keyboardType(.default)
-                    
-            
+            HStack {
+                 Text("Passord")
+                 . padding(.leading, 10)
+                 . padding(.trailing, 20)
+                 
+                 SecureField("Legg inn passord", text: $passord)
+                     .keyboardType(.emailAddress)
+                                
+             }
+             
             Button(action: {
-                print("\(self.username) and \(self.password)" as Any)
+                print("\(self.email) and \(self.passord)" as Any)
             }) {
                 Text("Login")
             }
