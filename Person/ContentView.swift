@@ -19,34 +19,38 @@ struct ContentView: View {
         
          VStack {
             
-            Spacer(minLength: 5)
+            Spacer(minLength: 20)
             
             Image("Image")
+                .resizable()
+                .frame(width: CGFloat(40.0), height: CGFloat(40.0))
+                .clipped()
+            
+            Image("")
                 .resizable()
                 .frame(width: CGFloat(100.0), height: CGFloat(100.0))
                 .clipped()
             
             VStack {
                 
-                Spacer(minLength: 0)
+                // Spacer(minLength: 30)
                 
-                HStack {
+                Form {
                                     
                     Text("Epost")
                         . padding(.leading, 10)
-                        . padding(.trailing, 37)
-                        
+                         
                     TextField("Legg inn epost ", text: $email)
                         .keyboardType(.emailAddress)
-                }
+                        . padding(.leading, 10)
                 
-                HStack {
+                 
                      Text("Passord")
                         . padding(.leading, 10)
-                        . padding(.trailing, 20)
-                     
+                        
                      SecureField("Legg inn passord", text: $passord)
                          .keyboardType(.default)
+                         . padding(.leading, 10)
                                     
                 }
                  
@@ -54,7 +58,7 @@ struct ContentView: View {
             
             VStack {
             
-                Spacer(minLength: 80)
+                Spacer(minLength: 10)
                 
                 Button(action: {
                     if self.email == "" || self.passord == "" {
@@ -67,7 +71,9 @@ struct ContentView: View {
                 }
             
             }
-         }
+         
+            
+        }
     }
     
 }
