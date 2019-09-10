@@ -6,6 +6,8 @@
 //  Copyright © 2019 Jan Hovland. All rights reserved.
 //
 
+// Neste oppgave er å få posisjonert elementene på skjermen
+
 import SwiftUI
 
 struct ContentView: View {
@@ -14,15 +16,16 @@ struct ContentView: View {
     @State private var passord = ""
 
     var body: some View {
-        VStack {
+        
+         VStack {
             
             Image("Image")
                 .resizable()
                 .frame(width: CGFloat(100.0), height: CGFloat(100.0))
                 .clipped()
-           
+            
             HStack {
-                Text("Epost")
+            Text("Epost")
                     . padding(.leading, 10)
                     . padding(.trailing, 37)
                     
@@ -52,8 +55,9 @@ struct ContentView: View {
             }
             
            
-       }
+         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
