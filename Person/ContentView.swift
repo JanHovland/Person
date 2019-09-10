@@ -19,42 +19,54 @@ struct ContentView: View {
         
          VStack {
             
+            Spacer(minLength: 5)
+            
             Image("Image")
                 .resizable()
                 .frame(width: CGFloat(100.0), height: CGFloat(100.0))
                 .clipped()
             
-            HStack {
-            Text("Epost")
-                    . padding(.leading, 10)
-                    . padding(.trailing, 37)
-                    
-                TextField("Legg inn epost ", text: $email)
-                    .keyboardType(.emailAddress)
-            }
-            
-            HStack {
-                 Text("Passord")
-                 . padding(.leading, 10)
-                 . padding(.trailing, 20)
+            VStack {
+                
+                Spacer(minLength: 0)
+                
+                HStack {
+                                    
+                    Text("Epost")
+                        . padding(.leading, 10)
+                        . padding(.trailing, 37)
+                        
+                    TextField("Legg inn epost ", text: $email)
+                        .keyboardType(.emailAddress)
+                }
+                
+                HStack {
+                     Text("Passord")
+                        . padding(.leading, 10)
+                        . padding(.trailing, 20)
+                     
+                     SecureField("Legg inn passord", text: $passord)
+                         .keyboardType(.default)
+                                    
+                }
                  
-                 SecureField("Legg inn passord", text: $passord)
-                     .keyboardType(.default)
-                                
-            }
-             
-                      
-            Button(action: {
-                if self.email == "" || self.passord == "" {
-                }
-                else {
-                    print("\(self.email) and \(self.passord)" as Any)
-                }
-            }) {
-                Text("Login")
             }
             
-           
+            VStack {
+            
+                Spacer(minLength: 80)
+                
+                Button(action: {
+                    if self.email == "" || self.passord == "" {
+                    }
+                    else {
+                        print("\(self.email) and \(self.passord)" as Any)
+                    }
+                }) {
+                    Text("Login")
+                }
+            
+            }
          }
     }
     
