@@ -16,20 +16,24 @@ struct ContentView: View {
     @State private var passord = ""
 
     var body: some View {
-        
-         VStack {
+        VStack {
             
-            Spacer(minLength: 20)
+            // padding(.vertical)
             
             Image("Image")
                 .resizable()
                 .frame(width: CGFloat(40.0), height: CGFloat(40.0))
                 .clipped()
             
+            /*
             Image("")
                 .resizable()
                 .frame(width: CGFloat(100.0), height: CGFloat(100.0))
                 .clipped()
+            
+            */
+            
+            Spacer(minLength: 1)
             
             VStack {
                 
@@ -49,7 +53,7 @@ struct ContentView: View {
                         . padding(.leading, 10)
                         
                      SecureField("Legg inn passord", text: $passord)
-                         .keyboardType(.default)
+                        .keyboardType(.asciiCapable)
                          . padding(.leading, 10)
                                     
                 }
@@ -74,8 +78,10 @@ struct ContentView: View {
          
             
         }
+       
+        
     }
-    
+
 }
 
 struct ContentView_Previews: PreviewProvider {
